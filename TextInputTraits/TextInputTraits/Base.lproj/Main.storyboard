@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUB-tJ-NR1">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Capitalization-->
+        <scene sceneID="L8x-ti-Yfr">
+            <objects>
+                <viewController title="Capitalization" id="thb-jh-vgo" customClass="ViewController" customModule="TextInputTraits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sns-mj-k6H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Jud-nu-ugt">
+                                <rect key="frame" x="16" y="64" width="382" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="adF-OJ-2ed">
+                                <rect key="frame" x="16" y="144" width="382" height="29"/>
+                                <segments>
+                                    <segment title="None"/>
+                                    <segment title="Words"/>
+                                    <segment title="Sentences"/>
+                                    <segment title="AllChars"/>
+                                </segments>
+                                <connections>
+                                    <action selector="capitalizationChanged:" destination="thb-jh-vgo" eventType="valueChanged" id="zvD-hK-RpI"/>
+                                    <action selector="captializationChnged:" destination="thb-jh-vgo" eventType="valueChanged" id="aZ1-HA-wYg"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="adF-OJ-2ed" firstAttribute="leading" secondItem="g70-pr-QwU" secondAttribute="leading" constant="16" id="Vm6-D6-Jzk"/>
+                            <constraint firstItem="g70-pr-QwU" firstAttribute="trailing" secondItem="adF-OJ-2ed" secondAttribute="trailing" constant="16" id="aCJ-VD-PpB"/>
+                            <constraint firstItem="Jud-nu-ugt" firstAttribute="leading" secondItem="g70-pr-QwU" secondAttribute="leading" constant="16" id="fYS-cr-Jxd"/>
+                            <constraint firstItem="g70-pr-QwU" firstAttribute="trailing" secondItem="Jud-nu-ugt" secondAttribute="trailing" constant="16" id="nqp-pI-j5Z"/>
+                            <constraint firstItem="adF-OJ-2ed" firstAttribute="top" secondItem="Jud-nu-ugt" secondAttribute="bottom" constant="50" id="oUx-Wt-Ba8"/>
+                            <constraint firstItem="Jud-nu-ugt" firstAttribute="top" secondItem="g70-pr-QwU" secondAttribute="top" constant="20" id="wZO-HP-JON"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g70-pr-QwU"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputField" destination="Jud-nu-ugt" id="XCS-D5-seq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kGf-PQ-5Rf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="871"/>
+        </scene>
+        <!--Correction-->
+        <scene sceneID="qm0-x1-bQV">
+            <objects>
+                <viewController title="Correction" id="dbG-Hu-jsy" customClass="CorrectionViewController" customModule="ViewCatalog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rQB-h2-2Np">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XaL-pI-0Dl">
+                                <rect key="frame" x="16" y="64" width="382" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vag-1o-Myr">
+                                <rect key="frame" x="16" y="144" width="382" height="29"/>
+                                <segments>
+                                    <segment title="Default"/>
+                                    <segment title="No"/>
+                                    <segment title="Yes"/>
+                                </segments>
+                                <connections>
+                                    <action selector="correctionChanged:" destination="dbG-Hu-jsy" eventType="valueChanged" id="h7q-nJ-HXy"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vag-1o-Myr" firstAttribute="top" secondItem="XaL-pI-0Dl" secondAttribute="bottom" constant="50" id="PXq-mH-gvb"/>
+                            <constraint firstItem="aZX-wq-Dpl" firstAttribute="trailing" secondItem="XaL-pI-0Dl" secondAttribute="trailing" constant="16" id="XIZ-bU-oaq"/>
+                            <constraint firstItem="XaL-pI-0Dl" firstAttribute="top" secondItem="aZX-wq-Dpl" secondAttribute="top" constant="20" id="iUQ-Y9-xsK"/>
+                            <constraint firstItem="aZX-wq-Dpl" firstAttribute="trailing" secondItem="Vag-1o-Myr" secondAttribute="trailing" constant="16" id="tOx-W5-8Ov"/>
+                            <constraint firstItem="XaL-pI-0Dl" firstAttribute="leading" secondItem="aZX-wq-Dpl" secondAttribute="leading" constant="16" id="v7O-9y-7nM"/>
+                            <constraint firstItem="Vag-1o-Myr" firstAttribute="leading" secondItem="aZX-wq-Dpl" secondAttribute="leading" constant="16" id="yWQ-sC-j5C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aZX-wq-Dpl"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputField" destination="XaL-pI-0Dl" id="7Ob-Zl-cBa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCp-sF-TfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1075" y="839"/>
+        </scene>
+        <!--Spell Checking-->
+        <scene sceneID="K7T-Mz-KXJ">
+            <objects>
+                <viewController title="Spell Checking" id="HuF-Om-j2x" customClass="SpellCheckingViewController" customModule="ViewCatalog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rBj-Vi-JSW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tof-j0-5o6">
+                                <rect key="frame" x="20" y="69" width="374" height="413"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PJa-gi-LdP">
+                                <rect key="frame" x="20" y="497" width="374" height="29"/>
+                                <segments>
+                                    <segment title="Default"/>
+                                    <segment title="No"/>
+                                    <segment title="Yes"/>
+                                </segments>
+                                <connections>
+                                    <action selector="spellCheckingChanged:" destination="HuF-Om-j2x" eventType="valueChanged" id="DaI-sV-qiX"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Tof-j0-5o6" firstAttribute="top" secondItem="d5B-w6-HmG" secondAttribute="top" constant="25" id="6GB-MQ-6m3"/>
+                            <constraint firstItem="PJa-gi-LdP" firstAttribute="leading" secondItem="d5B-w6-HmG" secondAttribute="leading" constant="20" id="A0D-yT-VJa"/>
+                            <constraint firstItem="PJa-gi-LdP" firstAttribute="top" secondItem="Tof-j0-5o6" secondAttribute="bottom" constant="15" id="RUI-dc-nqS"/>
+                            <constraint firstItem="d5B-w6-HmG" firstAttribute="trailing" secondItem="Tof-j0-5o6" secondAttribute="trailing" constant="20" id="Whj-VO-XNE"/>
+                            <constraint firstItem="d5B-w6-HmG" firstAttribute="trailing" secondItem="PJa-gi-LdP" secondAttribute="trailing" constant="20" id="Y03-cc-2Eg"/>
+                            <constraint firstItem="Tof-j0-5o6" firstAttribute="leading" secondItem="d5B-w6-HmG" secondAttribute="leading" constant="20" id="kuU-DB-r9c"/>
+                            <constraint firstItem="d5B-w6-HmG" firstAttribute="bottom" secondItem="Tof-j0-5o6" secondAttribute="bottom" constant="380" id="mFe-19-bcl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d5B-w6-HmG"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="Tof-j0-5o6" id="hQ3-M3-Ygh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdF-wO-oYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2023" y="838"/>
+        </scene>
+        <!--Secure Text Entry-->
+        <scene sceneID="iTO-ie-JrK">
+            <objects>
+                <viewController title="Secure Text Entry" id="EUB-tJ-NR1" customClass="SecureTextEntryViewController" customModule="ViewCatalog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O9Y-Ud-jS7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1XD-KA-Qqd">
+                                <rect key="frame" x="20" y="72" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1XD-KA-Qqd" firstAttribute="top" secondItem="YYZ-PX-2rs" secondAttribute="top" constant="28" id="27V-sH-BTh"/>
+                            <constraint firstItem="YYZ-PX-2rs" firstAttribute="trailing" secondItem="1XD-KA-Qqd" secondAttribute="trailing" constant="20" id="NZl-1m-Jlt"/>
+                            <constraint firstItem="1XD-KA-Qqd" firstAttribute="leading" secondItem="YYZ-PX-2rs" secondAttribute="leading" constant="20" id="z6o-2c-OJZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YYZ-PX-2rs"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordField" destination="1XD-KA-Qqd" id="NOn-un-X2R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5C-jR-ZgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3107" y="838"/>
+        </scene>
+    </scenes>
+</document>

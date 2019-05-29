@@ -6,4 +6,15 @@
 //  Copyright © 2019 Seungjun Lim. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class SecureTextEntryViewController: UIViewController {
+    
+    @IBOutlet weak var passwordField: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        passwordField.isSecureTextEntry = true
+    }
+}
